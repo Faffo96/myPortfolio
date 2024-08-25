@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url('./assets/background2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::before{
+    position: absolute;
+    width: min(1400px, 90vw);
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    background-image: url('./assets/background2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
