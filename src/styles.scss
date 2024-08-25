@@ -22,3 +22,5 @@ body::before{
     background-repeat: no-repeat;
     pointer-events: none;
 }
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

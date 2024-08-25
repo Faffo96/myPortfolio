@@ -1,2 +1,40 @@
-
-<p>ciao</p>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li ngbDropdown class="nav-item">
+            <div class="d-flex">
+              <a class="nav-link" routerLink="/my-projects">My Projects</a>
+              <button class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdown" role="button">
+              </button>
+            </div>
+              
+            <ul ngbDropdownMenu aria-labelledby="navbarDropdown" class="dropdown-menu">
+              <li><a ngbDropdownItem class="dropdown-item" routerLink="/spotify-details">Spotify Clone</a></li>
+              <li><a ngbDropdownItem class="dropdown-item" routerLink="/hamburgeria-details">Hamburgeria</a></li>
+              <li><a ngbDropdownItem class="dropdown-item" routerLink="/medium-details">Medium Clone</a></li>
+              <li><a ngbDropdownItem class="dropdown-item" routerLink="/quiz-details">Epicode Style Quiz</a></li>
+              <li><a ngbDropdownItem class="dropdown-item" routerLink="/car-showroom-details">Car Showroom</a></li>
+              <li><a ngbDropdownItem class="dropdown-item" routerLink="/todo-details">Tasks App</a></li>
+              <li><a ngbDropdownItem class="dropdown-item" routerLink="/netflix-details">Netflix Clone</a></li>
+              <li><a ngbDropdownItem class="dropdown-item" routerLink="/social-details">Epicode Style Social</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>

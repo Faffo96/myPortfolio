@@ -8,9 +8,11 @@ import { QuizDetailsComponent } from './component/quiz-details/quiz-details.comp
 import { SocialDetailsComponent } from './component/social-details/social-details.component';
 import { SpotifyDetailsComponent } from './component/spotify-details/spotify-details.component';
 import { TodoDetailsComponent } from './component/todo-details/todo-details.component';
+import { HomeComponent } from './component/home/home.component';
 
 
 export const routes: Routes = [
+    { path: 'home', component: HomeComponent},
     { path: 'my-projects', component: MyProjectsComponent },
     { path: 'my-projects/car-showroom', component: CarShowroomDetailsComponent },
     { path: 'my-projects/hamburgeria', component: HamburgeriaDetailsComponent },
