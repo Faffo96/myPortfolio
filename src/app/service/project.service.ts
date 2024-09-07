@@ -62,7 +62,7 @@ export class ProjectService {
       '../../../assets/img/netflix/netflix5.png',
       '../../../assets/img/netflix/netflix6.png',
     ],
-    demoLink: ''
+    demoLink: 'https://www.youtube.com/watch?v=EBfnk1Lao1Y'
     },
     {
       title: 'MEDIUM CLONE',
