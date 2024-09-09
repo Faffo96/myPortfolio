@@ -1,10 +1,10 @@
 <div class="container-fluid">
     <div class="container">
-        <div class="row mt-5 justify-content-center">
+        <div class="row row-cols-4 mt-5 justify-content-center">
             <div *ngFor="let project of projects; let i = index" class="box d-flex flex-column align-items-center">
                 <div class="bg d-flex flex-column justify-content-end">
-                    <p class="mx-auto w-85 text-center details-fs">{{ project.shortDescription }}</p>
-                    <button class="button mx-auto mt-1" [routerLink]="['/my-projects', project.uri]">
+                    <p class="mx-auto text-light w-85 text-center details-fs">{{ project.shortDescription }}</p>
+                    <a class="button mx-auto mt-1" [routerLink]="['/my-projects', project.uri]">
                         More details
                         <div class="star-1">
                             <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
@@ -84,10 +84,10 @@
                                 </g>
                             </svg>
                         </div>
-                    </button>
+                    </a>
                 </div>
                 <img class="img" [src]="project.imageUrl" [alt]="project.altText">
-                <h2 class="animation mt-3 mb-0 fw-bolder fs-5">{{ project.title }}</h2>
+                <h2 class="animation active mt-3 mb-0 fw-bolder fs-5">{{ project.title }}</h2>
             </div>
         </div>
     </div>
