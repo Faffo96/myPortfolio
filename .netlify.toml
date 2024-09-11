@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[context.production.environment]
+  EMAILJS_SERVICE_ID = "your-production-service-id"
+  EMAILJS_TEMPLATE_ID = "your-production-template-id"
+  EMAILJS_USER_ID = "your-production-user-id"
+
+[context.deploy-preview.environment]
+  EMAILJS_SERVICE_ID = "your-preview-service-id"
+  EMAILJS_TEMPLATE_ID = "your-preview-template-id"
+  EMAILJS_USER_ID = "your-preview-user-id"

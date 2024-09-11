@@ -1,0 +1,38 @@
+
+
+.navbar {
+    font-family: 'ICA Rubrik';
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+  }
+  
+  .dropdown-menu, .dropdown-item {
+    background-color: #060612!important;
+  }
+  
+  .nav-link {
+    color: whitesmoke;
+    font-size: 2rem;
+    font-weight: 200;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: white;
+    transform: scale(110%);
+  }
+  
+  .active-parent .nav-link.active {
+    color: #245eae!important;
+  }
+  
+  .active-parent .dropdown-toggle {
+    color: #245eae!important;
+  }
+  
+  .dropdown-toggle {
+    z-index: 3;
+  }
+  
