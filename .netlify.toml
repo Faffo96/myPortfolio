@@ -1,13 +1,12 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command = "ng build --prod"
+  publish = "dist/your-angular-app"  # Modifica questo con il percorso corretto della tua build
 
-[context.production.environment]
-  EMAILJS_SERVICE_ID = "your-production-service-id"
-  EMAILJS_TEMPLATE_ID = "your-production-template-id"
-  EMAILJS_USER_ID = "your-production-user-id"
+[build.environment]
+  # Esempio di variabili di ambiente (sostituisci con valori reali o usa Netlify UI)
+  # SECURITY_TOKEN = "your_security_token" # Non mettere token sensibili qui, usa Netlify UI
 
-[context.deploy-preview.environment]
-  EMAILJS_SERVICE_ID = "your-preview-service-id"
-  EMAILJS_TEMPLATE_ID = "your-preview-template-id"
-  EMAILJS_USER_ID = "your-preview-user-id"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

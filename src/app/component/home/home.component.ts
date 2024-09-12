@@ -1,24 +1,42 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { Component, inject, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from '../../../environments/environment';
+import { TranslateConfigModule } from '../../module/translate-config.module';
+import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule, NgbAlertModule],
+  imports: [RouterModule, NgbAlertModule, HttpClientModule, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  private http = inject(HttpClient);
+  responseMessage: string | null = null; 
+  /* private securityToken = environment.SECURITY_TOKEN; */
+  private securityToken2 = environment.securityToken;
 
-  constructor(private renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: object) {}
+  constructor(private renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: object) {
+
+  }
+
+  /* private apiUrl = 'http://localhost:8080/api/mail/send';  */
+  private apiUrl = 'https://mail-sender-9oiy.onrender.com/api/mail/send';
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       // Esegui questo codice solo se è in un ambiente browser
       this.renderer.addClass(document.body, 'no-scroll');
     }
+
+    console.log('SECURITY_TOKEN:', environment.SECURITY_TOKEN);
+console.log('SECURITY TOKEN 2: ' + environment.securityToken)
+      
   }
 
   ngOnDestroy(): void {
@@ -26,5 +44,48 @@ export class HomeComponent implements OnInit, OnDestroy {
       // Rimuovi la classe solo se è in un ambiente browser
       this.renderer.removeClass(document.body, 'no-scroll');
     }
+
+    /* this.sendFakeEmail();
+  
+      // Esegui la funzione ogni 14 minuti (840.000 millisecondi)
+      setInterval(() => {
+        this.sendFakeEmail();
+      }, 840000); */
+  }
+
+  sendFakeEmail() {
+    const newForm = {
+      to: 'fabioscar96@gmail.com',
+      name: 'abcdef',
+      email: '',
+      message: ''
+    };
+
+    const securityToken = process.env['SECURITY_TOKEN'];
+    console.log(securityToken)
+  
+    this.http.post(this.apiUrl, newForm, {
+      headers: new HttpHeaders({
+        'Authorization': securityToken || ''
+      }),
+      observe: 'response'
+    }).subscribe(
+      response => {
+        if (response.status === 200) {
+          this.responseMessage = 'Fake Email successfully sent (it should be not)';
+        } else {
+          console.log(`Unexpected status code: ${response.status}`);
+          this.responseMessage = `Unexpected status code: ${response.status}`;
+        }
+      },
+      error => {
+        console.error('Failed to send email:', error);
+        if (error.status === 400) {
+          this.responseMessage = 'Failed to send email: ' + (error.error?.message || 'Unknown error');
+        } else {
+          this.responseMessage = 'An unexpected error occurred';
+        }
+      }
+    );
   }
 }

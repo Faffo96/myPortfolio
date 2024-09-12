@@ -1,7 +1,5 @@
-
 export const environment = {
   production: true,
-  EMAILJS_SERVICE_ID: 'undefined',
-  EMAILJS_TEMPLATE_ID: 'undefined',
-  EMAILJS_USER_ID: 'undefined'
+  SECURITY_TOKEN: 'default_value',
+  securityToken: 'default_value',
 };

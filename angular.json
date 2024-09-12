@@ -15,11 +15,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",  
           "options": {
-            "outputPath": "D:/Portfolio/dist",
+            "outputPath": "D:/Portfolio/dist",  
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",  
             "polyfills": [
               "zone.js"
             ],
@@ -33,14 +33,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              "src/set-env.mjs"
-            ],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -101,6 +94,14 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "D:/Portfolio/dist",
+            "netlifyToken": "nfp_tD22nMbfpTGVXS7otnzNSxH5AmuDgSai882c",
+            "siteId": "cb39d9c9-a0b6-4250-a11b-c2a53b74a713"
           }
         }
       }
