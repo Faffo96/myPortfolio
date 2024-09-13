@@ -21,10 +21,10 @@
               </div>
               
             <div class="container bg-shadow d-flex flex-column my-4">
-                <p class="description mt-4 mx-auto p-3 text-center text-light">{{ project.longDescription }}</p>
+                <p class="description mt-4 mx-auto p-3 text-center text-light">{{ project.longDescription | translate }}</p>
 
                 <a class="button mx-auto mt-3 mb-5" href= "{{ project.demoLink }}" target="_blank" >
-                    Demo Site
+                    {{ "TEXT21" | translate }}
                     <div class="star-1">
                         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
                             style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"

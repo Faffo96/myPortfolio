@@ -5,11 +5,12 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import * as emailjs from 'emailjs-com';
 import { environment } from '../../../environments/environment';
 import { NgClass, NgIf } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [FormsModule, HttpClientModule, NgClass, NgIf],
+  imports: [FormsModule, HttpClientModule, NgClass, NgIf, TranslateModule],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })
@@ -30,6 +31,8 @@ export class AboutMeComponent {
     message: ''
   };
 
+  constructor(private translate: TranslateService) {}
+
     /* private apiUrl = 'http://localhost:8080/api/mail/send';  */
  private apiUrl = 'https://mail-sender-9oiy.onrender.com/api/mail/send';
   
@@ -49,21 +52,30 @@ export class AboutMeComponent {
         if (response.status === 200) {
           // Successo
           this.isSuccess = true;
-          this.responseMessage = 'Email successfully sent';
+          this.translate.get('SUCCESS_MESSAGE').subscribe((res: string) => {
+            this.responseMessage = res;
+          });
+          /* this.responseMessage = 'Email successfully sent'; */
           setTimeout(() => {
             this.closeModal();
           }, 2000); 
         } else {
           // Status code diverso da 200
           this.isSuccess = false;
-          this.responseMessage = `Unexpected status code: ${response.status}`;
+          this.translate.get('ERROR_MESSAGE').subscribe((res: string) => {
+            this.responseMessage = res;
+          });
+          /* this.responseMessage = `Unexpected status code: ${response.status}`; */
         }
         this.isSubmitting = false;  // Riabilita il pulsante
       },
       error => {
         console.error('Failed to send email:', error);
         this.isSuccess = false;
-        this.responseMessage = 'Failed to send email, please try again';
+        this.translate.get('ERROR_MESSAGE').subscribe((res: string) => {
+          this.responseMessage = res;
+        });
+        /* this.responseMessage = 'Failed to send email, please try again'; */
         this.isSubmitting = false;  // Riabilita il pulsante
       }
     );

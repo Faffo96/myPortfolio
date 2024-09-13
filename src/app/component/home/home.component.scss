@@ -111,6 +111,16 @@
     z-index: -1;
 }
 
+.dot {
+    top: 35%;
+    left: 48%;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    z-index: -1;
+    box-shadow: 0px 0px 67px 27px #fff;
+}
+
 @media screen and (max-width: 1023px) {
     .banner .slider {
         width: 160px;

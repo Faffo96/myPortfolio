@@ -4,11 +4,12 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProjectService } from '../../service/project.service';
 import { NgbCarousel, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
-  imports: [RouterModule, NgFor, NgClass, NgbCarousel, NgbCarouselModule],
+  imports: [RouterModule, NgFor, NgClass, NgbCarousel, NgbCarouselModule, TranslateModule],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.scss'
 })
