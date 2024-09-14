@@ -45,12 +45,12 @@ console.log('SECURITY TOKEN 2: ' + environment.securityToken)
       this.renderer.removeClass(document.body, 'no-scroll');
     }
 
-    /* this.sendFakeEmail();
+    this.sendFakeEmail();
   
       // Esegui la funzione ogni 14 minuti (840.000 millisecondi)
       setInterval(() => {
         this.sendFakeEmail();
-      }, 840000); */
+      }, 840000);
   }
 
   sendFakeEmail() {
@@ -61,13 +61,13 @@ console.log('SECURITY TOKEN 2: ' + environment.securityToken)
       message: ''
     };
 
-    const securityToken = process.env['SECURITY_TOKEN'];
-    console.log(securityToken)
+    /* const securityToken = process.env['SECURITY_TOKEN'];
+    console.log(securityToken) */
   
     this.http.post(this.apiUrl, newForm, {
-      headers: new HttpHeaders({
+      /* headers: new HttpHeaders({
         'Authorization': securityToken || ''
-      }),
+      }), */
       observe: 'response'
     }).subscribe(
       response => {

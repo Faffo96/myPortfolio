@@ -3,7 +3,7 @@ import { Router, NavigationEnd, RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs';
 import { NgClass, CommonModule } from '@angular/common';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateConfigModule } from '../../module/translate-config.module';
 
 @Component({
@@ -14,6 +14,7 @@ import { TranslateConfigModule } from '../../module/translate-config.module';
     RouterModule, 
     NgbDropdownModule, 
     NgClass, 
+    NgbCollapseModule,
     TranslateModule,
     TranslateConfigModule
   ],
@@ -22,6 +23,7 @@ import { TranslateConfigModule } from '../../module/translate-config.module';
 })
 export class HeaderComponent {
   currentRoute: string = '';
+  isNavbarCollapsed = true;
 
   constructor(private router: Router, private translate: TranslateService) {
     // Configurazione delle lingue

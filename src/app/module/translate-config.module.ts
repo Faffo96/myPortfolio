@@ -3,6 +3,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideHttpClient } from '@angular/common/http';
+import { HomeComponent } from '../component/home/home.component';
 
 // Funzione per creare il loader
 export function httpTranslateLoader(http: HttpClient) {

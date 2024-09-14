@@ -149,12 +149,36 @@ ul {
     transform: translateY(500px);
 }
 
-.layer {
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(170deg, rgba(0,0,0,0.32816876750700286) 27%, rgba(255,255,255,0) 81%);
-  position: absolute;
-  top: -300px;
-  left: 0;
-  z-index: -1;
+
+
+/* Per schermi piccoli (max-width: 576px) */
+/* @media only screen and (max-width: 576px) {
+
+ 
+} */
+
+/* SMARTPHONE */
+@media only screen and (max-width: 768px) {
+
+
+}
+
+/* TABLET */
+@media only screen and (max-width: 992px) {
+  .container-fluid {
+    transform: translateY(300px);
+  }
+
+  .no-scroll {
+    overflow-y: scroll;
+  }
+}
+
+
+
+/* LAPTOP */
+@media only screen and (max-width: 2000px) {
+  .container-fluid {
+    transform: translateY(200px);
+  }
 }

@@ -45,6 +45,7 @@
     transition: transform 0.7s ease; 
 }
 
+
 .banner .slider .item img:hover {
     transform: rotateY(-10deg) scale(1.06); 
     cursor: pointer; 
@@ -52,7 +53,7 @@
 
 .banner .content {
     position: absolute;
-    bottom: 2%;
+    bottom: 4%;
     left: 50%;
     transform: translateX(-50%);
     width: min(1400px, 100vw);
@@ -100,7 +101,7 @@
 }
 
 .svg {
-    transform: translateY(50px);
+    transform: translateY(58px);
 }
 
 .ologram {
@@ -122,38 +123,10 @@
 }
 
 @media screen and (max-width: 1023px) {
-    .banner .slider {
-        width: 160px;
-        height: 200px;
-        left: calc(50% - 80px);
-    }
-
-    .banner .slider .item {
-        transform: 
-            rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(300px);
-    }
-
-    .banner .content h1 {
-        text-align: center;
-        width: 100%;
-        text-shadow: 0 10px 20px #000;
-        font-size: 7em;
-    }
-
-    .banner .content .author {
-        color: #fff;
-        padding: 20px;
-        text-shadow: 0 10px 20px #000;
-        z-index: 2;
-        max-width: unset;
-        width: 100%;
-        text-align: center;
-        padding: 0 30px;
-    }
+    
 }
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
     .banner .slider {
         width: 100px;
         height: 150px;
@@ -169,4 +142,90 @@
     .banner .content h1 {
         font-size: 5em;
     }
+
+   
+} */
+
+
+
+
+
+
+
+/* LAPTOP */
+@media only screen and (max-width: 2000px) {
+  
+.banner .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(350px)
+        rotateY(7deg);
+   
 }
+
+.banner .slider .item img {
+    width: 140%;
+    height: auto;
+    object-fit: cover;
+    transform: rotateY(-10deg);
+    transition: transform 0.7s ease; 
+}
+}
+
+
+/* TABLET */
+@media only screen and (max-width: 992px) {
+    .container-fluid {
+      transform: translateY(300px);
+    }
+  
+    .banner .slider {
+      top: 22%;
+    }
+  
+    .banner .content {
+      top: 67%;
+      left: 0;
+      transform: translateX(0%);
+    }
+    .no-scroll {
+      overflow-y: visible!important;
+      color: red;
+    }
+  
+    .author{
+      width: 100%;
+    }
+  
+    .col-md-10 {
+      padding-top: 20px;
+      padding-bottom: 135px;
+    }
+  }
+
+/* SMARTPHONE */
+@media only screen and (max-width: 768px) {
+    .banner .slider .item img {
+        width: 140%;
+    }
+
+    .container-fluid {
+        transform: translateY(150px);
+      }
+    
+      .banner .slider {
+        top: 15%;
+      }
+    
+      .banner .content {
+        top: 48%;
+        left: 0;
+        transform: translateX(0%);
+      }
+    
+      .col-md-10 {
+        padding-top: 0;
+      }
+    }
