@@ -37,5 +37,8 @@
     "SHORT_DESCRIPTION8": "Un'applicazione Angular da un esercizio tematico su un'esposizione di automobili.",
     "LONG_DESCRIPTION8": "Car Showroom è stato il mio primo progetto Angular, costruito in solo 1 giorno. L'app utilizza una mock API, che ho popolato per gestire i dati, e funge da piattaforma di esposizione per le automobili in una concessionaria. Le auto sono visualizzate in categorie e gli utenti possono cercare modelli specifici utilizzando una barra di ricerca, fornendo un'esperienza di navigazione fluida.",
     "TEXT20": "Dettagli",
-    "TEXT21": "Visita il sito"
+    "TEXT21": "Visita il sito",
+    "URL1" : "https://youtu.be/tj2CMAYq7Jw",
+    "URL2" : "https://youtu.be/KPeIbW6X9Ho",
+    "URL3" : "https://youtu.be/SiCpmRlaK4U"
 }

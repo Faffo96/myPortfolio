@@ -1,4 +1,4 @@
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgClass } from '@angular/common';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Component, inject, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -11,13 +11,14 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule, NgbAlertModule, HttpClientModule, TranslateModule],
+  imports: [RouterModule, NgbAlertModule, HttpClientModule, TranslateModule, NgClass],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit, OnDestroy {
   private http = inject(HttpClient);
   responseMessage: string | null = null; 
+  isNavbarOpen = false;
   /* private securityToken = environment.SECURITY_TOKEN; */
   private securityToken2 = environment.securityToken;
 
@@ -51,6 +52,10 @@ console.log('SECURITY TOKEN 2: ' + environment.securityToken)
       setInterval(() => {
         this.sendFakeEmail();
       }, 840000);
+  }
+
+  onNavbarToggled(isOpen: boolean) {
+    this.isNavbarOpen = isOpen;
   }
 
   sendFakeEmail() {

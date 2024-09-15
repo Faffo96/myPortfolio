@@ -30,7 +30,7 @@ export class ProjectService {
         '../../../assets/img/hamburgeria/hamburgeria12.png',
         '../../../assets/img/hamburgeria/hamburgeria13.png',
       ],
-      demoLink: 'http://ourl.io/s2KeI'
+      demoLink: 'URL1'
     },
     {
       title: 'SPOTIFY CLONE',
@@ -62,7 +62,7 @@ export class ProjectService {
         '../../../assets/img/netflix/netflix5.png',
         '../../../assets/img/netflix/netflix6.png',
       ],
-      demoLink: 'https://www.youtube.com/watch?v=EBfnk1Lao1Y'
+      demoLink: 'URL2'
     },
     {
       title: 'MEDIUM CLONE',

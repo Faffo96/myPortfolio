@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router, NavigationEnd, RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs';
@@ -23,6 +23,7 @@ import { TranslateConfigModule } from '../../module/translate-config.module';
 })
 export class HeaderComponent {
   currentRoute: string = '';
+  @Output() navbarToggled = new EventEmitter<boolean>();
   isNavbarCollapsed = true;
 
   constructor(private router: Router, private translate: TranslateService) {
@@ -38,6 +39,11 @@ export class HeaderComponent {
       this.currentRoute = this.router.url;
     });
 
+  }
+
+  toggleNavbar() {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
+    this.navbarToggled.emit(!this.isNavbarCollapsed);
   }
 
   isActive(route: string): boolean {

@@ -11,6 +11,7 @@
   
   .dropdown-menu, .dropdown-item {
     background-color: #060612!important;
+    z-index: 3000;
   }
   
   .nav-link {
@@ -34,6 +35,6 @@
   }
   
   .dropdown-toggle {
-    z-index: 3;
+    z-index: 2;
   }
   

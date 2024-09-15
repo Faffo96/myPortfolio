@@ -1,34 +1,37 @@
-<div class="banner">
-    <div class="slider" style="--quantity: 8">
-        <a class="item" style="--position: 1" [routerLink]="['/my-projects', 'Hamburgeria']"><img
-                src="../../../assets/img/hamburgeria.png" alt=""></a>
-        <a class="item" style="--position: 2" [routerLink]="['/my-projects', 'SpotifyClone']"><img
-                src="../../../assets/img/spotify.png" alt=""></a>
-        <a class="item" style="--position: 3" [routerLink]="['/my-projects', 'CarShowroom']"><img
-                src="../../../assets/img/autosalone.png" alt=""></a>
-        <a class="item" style="--position: 4" [routerLink]="['/my-projects', 'EpicodeStyleTasks']"><img
-                src="../../../assets/img/todo.png" alt=""></a>
-        <a class="item" style="--position: 5" [routerLink]="['/my-projects', 'MediumClone']"><img
-                src="../../../assets/img/medium.png" alt=""></a>
-        <a class="item" style="--position: 6" [routerLink]="['/my-projects', 'EpicodeStyleSocial']"><img
-                src="../../../assets/img/social.png" alt=""></a>
-        <a class="item" style="--position: 7" [routerLink]="['/my-projects', 'EpicodeStyleQuiz']"><img
-                src="../../../assets/img/quiz.png" alt=""></a>
-        <a class="item" style="--position: 8" [routerLink]="['/my-projects', 'NetflixClone']"><img
-                src="../../../assets/img/netflix.png" alt=""></a>
+<div class="banner" [ngClass]="{'navbar-open': isNavbarOpen}">
+    <div class="test">
+
+        <div class="slider" style="--quantity: 8">
+            <a class="item" style="--position: 1" [routerLink]="['/my-projects', 'Hamburgeria']"><img
+                    src="../../../assets/img/hamburgeria.png" alt=""></a>
+            <a class="item" style="--position: 2" [routerLink]="['/my-projects', 'SpotifyClone']"><img
+                    src="../../../assets/img/spotify.png" alt=""></a>
+            <a class="item" style="--position: 3" [routerLink]="['/my-projects', 'CarShowroom']"><img
+                    src="../../../assets/img/autosalone.png" alt=""></a>
+            <a class="item" style="--position: 4" [routerLink]="['/my-projects', 'EpicodeStyleTasks']"><img
+                    src="../../../assets/img/todo.png" alt=""></a>
+            <a class="item" style="--position: 5" [routerLink]="['/my-projects', 'MediumClone']"><img
+                    src="../../../assets/img/medium.png" alt=""></a>
+            <a class="item" style="--position: 6" [routerLink]="['/my-projects', 'EpicodeStyleSocial']"><img
+                    src="../../../assets/img/social.png" alt=""></a>
+            <a class="item" style="--position: 7" [routerLink]="['/my-projects', 'EpicodeStyleQuiz']"><img
+                    src="../../../assets/img/quiz.png" alt=""></a>
+            <a class="item" style="--position: 8" [routerLink]="['/my-projects', 'NetflixClone']"><img
+                    src="../../../assets/img/netflix.png" alt=""></a>
+        </div>
     </div>
-    <div class="content row mx-sm-auto flex-md-column flex-lg-row">
-        <div class="author col-6">
-            <h2 class="ms-sm-3 ms-md-5"><b>FABIO</b></h2>
-            <h2 class="ms-sm-4 ms-md-5 mb-4"><b>SCARAMOZZINO</b></h2>
-            <p class="text-light text-center bg-shadow py-3 px-4 my-0" [innerHTML]="'TEXT12' | translate">
+    <div class="content row mx-auto flex-md-column flex-lg-row">
+        <div class="author col-6 px-0">
+            <h2 class="ms-3 ms-md-4 mb-0 pers-height"><b>FABIO</b></h2>
+            <h2 class="ms-4 ms-md-4 mb-4"><b>SCARAMOZZINO</b></h2>
+            <p class="text-light text-center bg-shadow py-3 px-4 my-0 mx-4 mx-lg-0" [innerHTML]="'TEXT12' | translate">
 
             </p>
         </div>
         <div class="col-lg-5 col-md-10">
-            <div class="row row-cols-4 d-flex flex-wrap justify-content-center align-items-center">
+            <div class="row row-cols-4 g-0 g-lg-5 ps-0 d-flex flex-wrap justify-content-center align-items-center">
                 <div class="mt-5 mt-md-0 svg d-flex flex-column align-items-center">
-                    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="angular17">
                             <g id="angular17_2" clip-path="url(#clip0_790_79)">
                                 <path id="Vector"
@@ -64,7 +67,7 @@
                 </div>
 
                 <div class="mt-5 mt-md-0 svg d-flex flex-column align-items-center">
-                    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="spring">
                             <g id="spring_2">
                                 <path id="Vector"
@@ -81,7 +84,7 @@
                 </div>
 
                 <div class="mt-5 mt-md-0 svg d-flex flex-column align-items-center">
-                    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="typescript">
                             <g id="typescript_2">
                                 <path id="Vector" d="M0 0.000488281H100V100H0V0.000488281Z" fill="#017ACB" />
@@ -96,7 +99,7 @@
                 </div>
 
                 <div class="mt-5 mt-md-0 svg d-flex flex-column align-items-center">
-                    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="java">
                             <g id="java_2">
                                 <path id="Vector"
@@ -122,7 +125,7 @@
                 </div>
 
                 <div class="mt-5 mt-md-5 svg d-flex flex-column align-items-center">
-                    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="postgresql">
                             <g id="postgresql_2">
                                 <path id="Vector"
@@ -145,7 +148,7 @@
                 </div>
 
                 <div class="mt-5 mt-md-5 svg d-flex flex-column align-items-center">
-                    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="github">
                             <g id="github_2">
                                 <path id="Vector"
@@ -162,7 +165,7 @@
                 </div>
 
                 <div class="mt-5 mt-md-5 svg d-flex flex-column align-items-center">
-                    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="wordpress">
                             <g id="wordpress_2">
                                 <path id="Vector"
@@ -181,8 +184,8 @@
                     <h3 class="text-light fs-6 mt-2">Wordpress</h3>
                 </div>
 
-                <div class="mt-5 mt-md-5 svg d-flex flex-column align-items-center">
-                    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="mt-5 mt-md-5 pe-0 svg d-flex flex-column align-items-center">
+                    <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="docker">
                             <g id="docker_2">
                                 <path id="Vector"

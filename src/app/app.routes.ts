@@ -11,5 +11,5 @@ export const routes: Routes = [
     { path: 'my-projects', component: MyProjectsComponent },
     { path: 'my-projects/:uri', component: ProjectDetailsComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: '**', redirectTo: '/404' }
+    { path: '**', redirectTo: '/home' },
 ];
