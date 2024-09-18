@@ -81,3 +81,12 @@ h2 {
     font-size: 0.8rem;
 }
 
+/* SMARTPHONE */
+@media only screen and (max-width: 768px) {
+
+    .container-fluid {
+      margin-top: 100px;
+      background-color: black;
+    }
+
+    }

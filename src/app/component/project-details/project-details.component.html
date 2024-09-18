@@ -3,27 +3,37 @@
         <div class="col-12">
             <h1 class="mt-5 mb-3">{{ project.title }}</h1>
 
-            <!-- Carousel wrapper -->
-            <ngb-carousel [activeId]="selectedIndex.toString()">
-                <ng-template ngbSlide *ngFor="let image of project.images; let i = index" [id]="i.toString()">
-                    <div class="picsum-img-wrapper">
-                        <img [src]="image" [alt]="project.altText" class="d-block w-100" />
-                    </div>
-                </ng-template>
-            </ngb-carousel>
+            <div class="position-relative">
+                <!-- Carousel wrapper -->
+                <ngb-carousel #carousel [activeId]="selectedIndex.toString()" (slide)="onSlideChange($event)">
+                    <ng-template ngbSlide *ngFor="let image of project.images; let i = index" [id]="i.toString()">
+                        <div class="picsum-img-wrapper">
+                            <img [src]="image" [alt]="project.altText" class="d-block w-100" />
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
+            
+                <!-- Thumbnails -->
+                <div [ngClass]="{'carousel-indicators-short': isShortName()}" class="carousel-indicators mt-2">
+                    <button *ngFor="let image of project.images; let i = index"
+                        [class.active]="i === selectedIndex"
+                        class="thumbnail-button"
+                        (click)="selectSlide(i)"
+                        (mouseenter)="pauseCarousel()"
+                        (mouseleave)="resumeCarousel()"
+                        [disabled]="isTransitioning"> <!-- Disabilita il pulsante durante la transizione -->
+                        <img [src]="image" [alt]="project.altText" class="d-block w-100 img-thumbnail p-0" />
+                    </button>
+                </div>
+            </div>
+            
 
-            <!-- Thumbnails -->
-            <div [ngClass]="{'carousel-indicators-short': isShortName()}" class="carousel-indicators mt-2">
-                <button *ngFor="let image of project.images; let i = index" [class.active]="i === selectedIndex"
-                        class="thumbnail-button" (click)="selectSlide(i)">
-                  <img [src]="image" [alt]="project.altText" class="d-block w-100 img-thumbnail p-0" />
-                </button>
-              </div>
-              
+
             <div class="container bg-shadow d-flex flex-column my-4">
-                <p class="description mt-4 mx-auto p-3 text-center text-light">{{ project.longDescription | translate }}</p>
+                <p class="description mt-4 mx-auto p-3 text-center text-light">{{ project.longDescription | translate }}
+                </p>
 
-                <a class="button mx-auto mt-3 mb-5" href= "{{ project.demoLink | translate }}" target="_blank" >
+                <a class="button mx-auto mt-3 mb-5" href="{{ project.demoLink | translate }}" target="_blank">
                     {{ "TEXT21" | translate }}
                     <div class="star-1">
                         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"

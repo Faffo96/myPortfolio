@@ -269,7 +269,7 @@ b {
       }
 
       .test {
-        transform: perspective(1000px) translate3d(0px, 200px, -412px);
+        transform: perspective(1000px) translate3d(0px, 160px, -412px) rotateX(9deg);
         transform-style: preserve-3d;
       }
     }

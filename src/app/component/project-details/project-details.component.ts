@@ -18,6 +18,7 @@ export class ProjectDetailsComponent implements OnInit {
   selectedIndex = 0;
   shortNames: string [] = ['HAMBURGERIA'];
   paramSub!: Subscription;  // Subscription to track paramMap changes
+  isTransitioning = false;  // Variabile per bloccare i clic
 
   @ViewChild(NgbCarousel) carousel!: NgbCarousel;
 
@@ -28,38 +29,62 @@ export class ProjectDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Subscribe to paramMap changes to detect route changes
     this.paramSub = this.route.paramMap.subscribe(paramMap => {
       const uri = paramMap.get('uri');
       if (uri) {
         this.project = this.projectService.getProjectByUri(uri);
-        this.selectedIndex = 0; // Reset the carousel to the first image on URI change
+        this.selectedIndex = 0;
 
-        // Scroll to the top of the page if window is defined
         if (typeof window !== 'undefined') {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        this.cdRef.detectChanges(); // Ensure Angular detects and applies changes
+        this.cdRef.detectChanges();
       }
     });
   }
 
   ngOnDestroy() {
-    // Cleanup the subscription when the component is destroyed
     if (this.paramSub) {
       this.paramSub.unsubscribe();
     }
   }
 
   selectSlide(index: number): void {
+    if (this.isTransitioning || index === this.selectedIndex) {
+      return;  // Evita clic multipli o clic sull'elemento già attivo
+    }
+
+    this.isTransitioning = true;  // Blocca clic ulteriori
     this.selectedIndex = index;
+
     if (this.carousel) {
       this.carousel.select(this.selectedIndex.toString());
     }
+
+    // Rilascia il blocco dopo 1 secondo
+    setTimeout(() => {
+      this.isTransitioning = false;
+    }, 500);
+  }
+
+  onSlideChange(event: any) {
+    this.selectedIndex = +event.current;
   }
 
   isShortName(): boolean {
     return this.shortNames.includes(this.project?.title);
+  }
+
+  pauseCarousel() {
+    if (this.carousel) {
+      this.carousel.pause();
+    }
+  }
+
+  resumeCarousel() {
+    if (this.carousel) {
+      this.carousel.cycle();
+    }
   }
 }

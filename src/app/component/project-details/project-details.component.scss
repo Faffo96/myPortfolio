@@ -37,11 +37,19 @@ ngb-carousel {
   display: flex;
   justify-content: center;
   margin-top: 15px;
-  transform: translateY(80px);
+  transform: translateY(39px);
 }
 
-.carousel-indicators-short {
-  transform: translateY(-110px);
+::ng-deep .carousel-control-prev-icon,
+::ng-deep .carousel-control-next-icon {
+    background-color: black; /* Cambia questo colore con quello che desideri */
+    border-radius: 100%;
+    padding: 30px;
+    filter: none; /* Rimuove eventuali filtri predefiniti */
+}
+
+.navbar-toggler {
+  transition: none;
 }
 
 .thumbnail-button {
@@ -89,7 +97,7 @@ ngb-carousel {
   /* SMARTPHONE */
 @media only screen and (max-width: 768px) {
   .carousel-indicators {
-    transform: translateY(-292px);
+    display: none;
     }
 
     h1 {
