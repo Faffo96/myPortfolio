@@ -25,7 +25,6 @@ export class AboutMeComponent {
   private securityToken = environment.SECURITY_TOKEN;
 
   form: any = {
-    to: 'fabioscar96@gmail.com',
     name: '',
     email: '',
     message: ''

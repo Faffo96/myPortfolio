@@ -65,7 +65,7 @@ export class ProjectDetailsComponent implements OnInit {
     // Rilascia il blocco dopo 1 secondo
     setTimeout(() => {
       this.isTransitioning = false;
-    }, 500);
+    }, 700);
   }
 
   onSlideChange(event: any) {

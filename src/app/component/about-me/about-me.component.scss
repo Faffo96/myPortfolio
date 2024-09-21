@@ -153,6 +153,19 @@ ul {
 
 
 
+.pngg {
+  shape-outside: circle(50%);
+  clip-path: circle(50%);
+  width: 200px;
+  height: 200px;
+}
+
+.text {
+  line-height: 1.1;
+  font-size: 1.1rem;
+}
+
+
 /* Per schermi piccoli (max-width: 576px) */
 /* @media only screen and (max-width: 576px) {
 
@@ -170,6 +183,10 @@ ul {
     width: 600px;
   }
 
+  .png {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 /* TABLET */
@@ -186,6 +203,11 @@ ul {
     height: 500px;
     width: 500px;
     margin-top: 70px;
+  }
+
+  .png {
+    width: 110px;
+    height: 110px;
   }
 }
 
@@ -204,5 +226,9 @@ ul {
   transform: translateY(100px);
 }
 
+.png {
+  width: 70px;
+  height: 70px;
+}
  
 }
