@@ -26,8 +26,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   }
 
-  /* private apiUrl = 'http://localhost:8080/api/mail/send';  */
-  private apiUrl = 'https://mail-sender-9oiy.onrender.com/api/mail/send';
+private mailApiUrl = environment.mailApiUrl;
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -69,7 +68,7 @@ console.log('SECURITY TOKEN 2: ' + environment.securityToken)
     /* const securityToken = process.env['SECURITY_TOKEN'];
     console.log(securityToken) */
   
-    this.http.post(this.apiUrl, newForm, {
+    this.http.post(this.mailApiUrl, newForm, {
       /* headers: new HttpHeaders({
         'Authorization': securityToken || ''
       }), */

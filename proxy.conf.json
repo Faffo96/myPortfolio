@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "https://mail-sender-9oiy.onrender.com",
+      "secure": true,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }

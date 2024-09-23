@@ -33,7 +33,9 @@ export class AboutMeComponent {
   constructor(private translate: TranslateService) {}
 
     /* private apiUrl = 'http://localhost:8080/api/mail/send';  */
- private apiUrl = 'https://mail-sender-9oiy.onrender.com/api/mail/send';
+ /* private apiUrl = 'https://mail-sender-9oiy.onrender.com/api/mail/send'; */
+
+ private mailApiUrl = environment.mailApiUrl;
   
 
  sendEmail(e: Event) {
@@ -41,7 +43,7 @@ export class AboutMeComponent {
 
     this.isSubmitting = true;  // Disabilita il pulsante
 
-    this.http.post(this.apiUrl, this.form, {
+    this.http.post(this.mailApiUrl, this.form, {
       headers: new HttpHeaders({
           'Authorization': this.securityToken || ''
       }),
